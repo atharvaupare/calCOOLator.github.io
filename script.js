@@ -9,7 +9,7 @@ buttons.forEach((item) => {
       let string = display.innerText.toString();
       display.innerText = string.substr(0, string.length - 1);
     } else if (display.innerText != "" && item.id == "equalto") {
-      display.innerText = eval(display.innerText);
+      display.innerText = eval(display.innerText).toFixed(2);
     } else if (display.innerText == "" && item.id == "equalto") {
       display.innerText = "Empty";
       setTimeout(() => (display.innerText = ""), 2000);
@@ -18,3 +18,13 @@ buttons.forEach((item) => {
     }
   };
 });
+
+const themeToggle = document.querySelector(".theme-toggler");
+const calculator = document.querySelector(".calculator");
+const toggleIcon = document.querySelector(".toggler-icon");
+let isDark = true;
+themeToggle.onclick = () => {
+  calculator.classList.toggle("dark");
+  themeToggle.classList.toggle("active");
+  isDark = !isDark;
+};
