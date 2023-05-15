@@ -10,7 +10,7 @@ buttons.forEach((item) => {
       display.innerText = string.substr(0, string.length - 1);
     } else if (display.innerText != "" && item.id == "equalto") {
       let result = eval(display.innerText);
-      display.innerText = result < 0 ? result.toFixed(6) : result.toFixed(2);
+      display.innerText = result < 1 ? result.toFixed(6) : result.toFixed(2);
     } else if (display.innerText == "" && item.id == "equalto") {
       display.innerText = "Empty";
       setTimeout(() => (display.innerText = ""), 2000);
